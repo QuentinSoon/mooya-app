@@ -1,7 +1,6 @@
-import type { StorybookConfig } from '@storybook/nextjs';
 import path from 'path';
 
-const config: StorybookConfig = {
+const config = {
 	stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
 	addons: [
 		'@storybook/addon-onboarding',
@@ -16,6 +15,9 @@ const config: StorybookConfig = {
 	},
 	docs: {
 		autodocs: 'tag',
+	},
+	typescript: {
+		reactDocgen: 'react-docgen-typescript',
 	},
 	staticDirs: ['../public'],
 	webpackFinal: async (config: any) => {
