@@ -1,3 +1,9 @@
-export default function Home() {
-	return <main>Remapper v3</main>;
+import { NavbarHome } from '@/components/navbar/navbar-home';
+
+export default async function Home() {
+	return (
+		<main>
+			<NavbarHome />
+		</main>
+	);
 }
