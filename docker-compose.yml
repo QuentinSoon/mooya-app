@@ -1,0 +1,52 @@
+version: '3'
+
+services:
+  reverse-proxy:
+    image: traefik:v3.0
+    command:
+      - '--api.insecure=true'
+      - '--providers.docker'
+    ports:
+      # - '80:80'
+      # - '8080:8080'
+      - '443:443'
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    labels:
+      - 'traefik.docker.lbswarm=true'
+    networks:
+      - traefik-public
+
+  mooyaapp:
+    image: ghcr.io/quentinsoon/mooya-app
+    networks:
+      - traefik-public
+    deploy:
+      mode: replicated
+      replicas: 3
+      update_config:
+        order: start-first
+        failure_action: rollback
+        delay: 5s
+    labels:
+      - traefik.enable=true
+      - traefik.docker.lbswarm=true
+      - traefik.docker.network=traefik-public
+
+      # **Règle pour mooya.fr placée en premier**
+      - traefik.http.routers.mooyaapp.rule=HostRegexp(`(www.)?mooya.fr`)
+      - traefik.http.routers.mooyaapp.entrypoints=http
+      - traefik.http.services.mooyaapp.loadbalancer.server.port=3000
+
+      # # Règle pour l'adresse IP
+      # - traefik.http.routers.mooyaapp-ip.rule=Host(`91.108.112.160`)
+      # - traefik.http.routers.mooyaapp-ip.entrypoints=http
+      # - traefik.http.services.mooyaapp-ip.loadbalancer.server.port=3000
+
+      # # Règle pour le TLS
+      - traefik.http.routers.traefik.tls=true
+      - traefik.http.routers.traefik.tls.certresolver=le
+
+networks:
+  traefik-public:
+    external: true
