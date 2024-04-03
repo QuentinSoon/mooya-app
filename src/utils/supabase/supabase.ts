@@ -7,9 +7,9 @@ export const HandleSignWithGoogle = async () => {
 	console.log('location.origin', location.origin);
 	const { data, error } = await supabase.auth.signInWithOAuth({
 		provider: 'google',
-		options: {
-			redirectTo: `${process.env.NEXT_PUBLIC_PATH}/auth/callback`,
-		},
+		// options: {
+		// 	redirectTo: `${process.env.NEXT_PUBLIC_PATH}/auth/callback`,
+		// },
 	});
 	if (error) {
 		console.error(error);
