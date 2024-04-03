@@ -5,6 +5,7 @@ export default async function Page() {
 	return (
 		<>
 			<CardWelcome />
+			ENV = {process.env.NEXT_PUBLIC_TITLE}
 			<SectionActiveFolders />
 		</>
 	);
