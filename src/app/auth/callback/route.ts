@@ -32,10 +32,12 @@ export async function GET(request: Request) {
 		);
 		const { error } = await supabase.auth.exchangeCodeForSession(code);
 		if (!error) {
-			return NextResponse.redirect(`https://mooya.fr/`);
+			return NextResponse.redirect(`${process.env.NEXT_PUBLIC_PATH}${next}`);
 		}
 	}
 
 	// return the user to an error page with instructions
-	return NextResponse.redirect(`${origin}/auth/auth-code-error`);
+	return NextResponse.redirect(
+		`${process.env.NEXT_PUBLIC_PATH}/auth/auth-code-error`
+	);
 }
