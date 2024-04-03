@@ -9,26 +9,13 @@ import {
 	DropdownTrigger,
 } from '@/library/dropdown';
 import { Navbar, NavbarLeft, NavbarRight } from '@/library/navbar';
-import { createClient } from '@/utils/supabase/client';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import LOGO from '../../../public/logo.png';
 import { ModalLogin } from '../modal/login-modal';
 
 export const NavbarHome = () => {
 	const [open, setOpen] = useState(false);
-	const [user, setUser] = useState<any>();
-
-	useEffect(() => {
-		const fetch = async () => {
-			const supabase = createClient();
-			const { data: user, error } = await supabase.auth.getUser();
-			if (error) return;
-			setUser(user.user);
-			console.log(user.user);
-		};
-		fetch();
-	}, []);
 
 	return (
 		<>

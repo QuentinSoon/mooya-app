@@ -1,4 +1,8 @@
+'use client';
+
 import { Card } from '@/library/card';
+import { createClient } from '@/utils/supabase/client';
+import { useEffect, useState } from 'react';
 
 export const CardWelcome = ({}: {}) => {
 	const DEBUG = [
@@ -24,10 +28,26 @@ export const CardWelcome = ({}: {}) => {
 			title: 'Test2',
 		},
 	];
+
+	const [users, setUsers] = useState<any>();
+
+	useEffect(() => {
+		const fetch = async () => {
+			const supabase = createClient();
+			const { data: users, error } = await supabase
+				.from('users')
+				.select('*')
+				.eq('email', 'q-truffy@mooya.fr')
+				.single();
+			setUsers(users);
+		};
+		fetch();
+	}, []);
+
 	return (
 		<Card className="py-14 px-60 w-full bg-gradient-to-r from-indigo-800 to-pink-600 flex flex-col justify-center gap-4 rounded-none">
 			<h3 className="font-medium text-left text-white text-2xl">
-				Bonjour Quentin,
+				{!users?.firstname ? 'Bonjour,' : `Bonjour ${users.firstname},`}
 			</h3>
 			<div className="inline-flex gap-5">
 				{DEBUG.map((item, index) => (
