@@ -1,3 +1,4 @@
+import { NavbarHosting } from '@/components/navbar/navbar-hosting';
 import { createClient } from '@/utils/supabase/server';
 import type { Metadata } from 'next';
 import { redirect } from 'next/navigation';
@@ -17,5 +18,10 @@ export default async function HostingLayout({
 	if (error || !data?.user) {
 		redirect('/');
 	}
-	return <div>{children}</div>;
+	return (
+		<div>
+			<NavbarHosting />
+			{children}
+		</div>
+	);
 }

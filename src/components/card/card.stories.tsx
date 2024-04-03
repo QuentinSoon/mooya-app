@@ -1,6 +1,7 @@
 import { Card } from '@/library/card';
 import type { Meta } from '@storybook/react';
 import { CardHost } from './card-host';
+import { CardWelcome } from './card-welcome';
 
 export default {
 	title: 'Components/Card',
@@ -18,3 +19,5 @@ export default {
 } as Meta<typeof Card>;
 
 export const Host = () => CardHost({});
+
+export const Welcome = () => CardWelcome({});
