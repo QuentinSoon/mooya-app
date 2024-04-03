@@ -7,7 +7,7 @@ export default {
 	title: 'Components/Card',
 	component: Card,
 	parameters: {
-		layout: 'centered',
+		layout: 'padding',
 	},
 	decorators: [
 		(Story) => (
@@ -20,4 +20,4 @@ export default {
 
 export const Host = () => CardHost({});
 
-export const Welcome = () => CardWelcome({});
+export const Welcome = () => <div className="w-screen">{CardWelcome({})}</div>;

@@ -34,6 +34,55 @@ export const NavbarHosting = () => {
 				<Button variant="light" rounded="full">
 					{MESSAGES.TODAY}
 				</Button>
+				<Button variant="light" rounded="full">
+					{MESSAGES.MESSAGES}
+				</Button>
+				<Button variant="light" rounded="full">
+					{MESSAGES.INFORMATIONS}
+				</Button>
+				<Button variant="light" rounded="full">
+					{MESSAGES.CALENDAR}
+				</Button>
+				<Dropdown placement="bottom-right">
+					<DropdownTrigger>
+						<Button
+							variant="light"
+							rounded="full"
+							endContent={
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="24"
+									height="24"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								>
+									<path d="m6 9 6 6 6-6" />
+								</svg>
+							}
+						>
+							{MESSAGES.MENU}
+						</Button>
+					</DropdownTrigger>
+					<DropdownContent variant="flat" size="md" color="basic">
+						<DropdownItem className="font-medium">
+							{MESSAGES.FOLDERS}
+						</DropdownItem>
+						<DropdownItem className="font-medium">
+							{MESSAGES.BOOKINGS}
+						</DropdownItem>
+						<DropdownItem className="font-medium">
+							{MESSAGES.MY_FOLDER_HOSTING}
+						</DropdownItem>
+						<DropdownSeparator />
+						<DropdownItem>Guides</DropdownItem>
+						<DropdownItem>Historique des transactions</DropdownItem>
+						<DropdownItem>Forum de la communauté</DropdownItem>
+					</DropdownContent>
+				</Dropdown>
 			</NavbarCenter>
 			<NavbarRight>
 				<div className="inline-flex items-center">

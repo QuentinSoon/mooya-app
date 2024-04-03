@@ -1,1 +1,22 @@
-{ "TODAY": "Aujourd'hui", "HELLO": "Bonjour" }
+{
+	"TODAY": "Aujourd'hui",
+	"HELLO": "Bonjour",
+	"MESSAGES": "Messages",
+	"FOLDERS": "Dossiers",
+	"BOOKINGS": "Réservations",
+	"MY_FOLDER_HOSTING": "Mon dossier locataire",
+	"MENU": "Menu",
+	"INFORMATIONS": "Informations",
+	"CALENDAR": "Calendrier",
+	"": "",
+	"": "",
+	"": "",
+	"": "",
+	"": "",
+	"": "",
+	"": "",
+	"": "",
+	"": "",
+	"": "",
+	"": ""
+}
