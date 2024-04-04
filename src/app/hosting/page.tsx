@@ -1,11 +1,18 @@
-import { CardWelcome } from '@/components/card/card-welcome';
+import { CardWelcomeServer } from '@/components/card/card-welcome';
 import { SectionActiveFolders } from '@/components/sections/section-active-folders';
+import { createClient } from '@/utils/supabase/server';
 
 export default async function Page() {
+	const supabase = createClient();
+	const { data: user } = await supabase
+		.from('users')
+		.select('*')
+		.eq('email', 'q-truffy@mooya.fr')
+		.single();
+
 	return (
 		<>
-			<CardWelcome />
-			ENV = {process.env.NEXT_PUBLIC_TITLE}
+			<CardWelcomeServer firstname={user.firstname} />
 			<SectionActiveFolders />
 		</>
 	);
