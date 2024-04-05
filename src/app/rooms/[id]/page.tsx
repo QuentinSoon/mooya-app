@@ -1,4 +1,5 @@
 import { CardCandidate } from '@/components/card/card-candidate';
+import { SectionRooms } from '@/components/sections/section-rooms';
 import { Mapbox } from '@/library/mapbox';
 import { createClient } from '@/utils/supabase/server';
 import { Metadata, ResolvingMetadata } from 'next';
@@ -87,13 +88,8 @@ export default async function Page({ params }: Props) {
 						</div>
 					</div>
 				</div>
-				<div className="flex flex-col gap-4">
-					<div className="font-semibold text-xl text-left text-[--color-basic-900]">
-						Ou se situe le logement
-					</div>
-					<div>
-						<Mapbox className="w-full h-96 rounded-2xl overflow-hidden" />
-					</div>
+				<SectionRooms title="Ou se situe le logement">
+					<Mapbox className="w-full h-96 rounded-2xl overflow-hidden" />
 					<div className="flex flex-col">
 						<div className="font-semibold text-base text-left text-[--color-basic-900]">
 							Nantes, Pays-de-la-Loire, France
@@ -102,7 +98,7 @@ export default async function Page({ params }: Props) {
 							Facile d accès, proche des transports en commun
 						</div>
 					</div>
-				</div>
+				</SectionRooms>
 			</div>
 			<CardCandidate title={rooms.title} description={rooms.description} />
 		</div>

@@ -1,7 +1,7 @@
 'use client';
 
-import mapboxgl from '!mapbox-gl';
 import { cn } from '@/utils/cn';
+import mapboxgl from 'mapbox-gl';
 import {
 	HTMLAttributes,
 	PropsWithChildren,
@@ -22,15 +22,15 @@ export type UseMapboxProps = Omit<
 
 const Mapbox = forwardRef<HTMLDivElement, UseMapboxProps>(
 	({ className }, ref) => {
-		const mapContainer = useRef(null);
-		const map = useRef(null);
-		const [lng, setLng] = useState(-70.9);
-		const [lat, setLat] = useState(42.35);
+		const mapContainer = useRef<any>();
+		const map = useRef<any>();
+		const [lng, setLng] = useState(-0.5593);
+		const [lat, setLat] = useState(47.4698);
 		const [zoom, setZoom] = useState(9);
 
 		useEffect(() => {
 			if (map.current) return; // initialize map only once
-			mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN;
+			mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN!;
 			map.current = new mapboxgl.Map({
 				container: mapContainer.current,
 				style: 'mapbox://styles/quentint/cl8tcc2h2007o14qgzjwt7f1q',
