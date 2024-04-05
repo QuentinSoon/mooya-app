@@ -1,0 +1,16 @@
+.user {
+	@apply flex flex-row items-center justify-start gap-2 box-border outline-none border-none;
+
+	.user-wrapper {
+		@apply inline-flex flex-col justify-between;
+
+		.name {
+			// @apply font-normal text-sm text-[--color-basic-900];
+			@apply font-semibold text-sm text-[--color-basic-900];
+		}
+
+		.description {
+			@apply font-normal text-xs text-[--color-basic-600];
+		}
+	}
+}

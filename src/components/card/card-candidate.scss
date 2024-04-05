@@ -1,0 +1,55 @@
+.card-candidate {
+	@apply flex flex-col ring-1 ring-[--color-basic-200] shadow-lg p-6 rounded-3xl min-w-80 max-w-80;
+
+	& > div:not(:last-child) {
+		@apply mb-4 pb-4 border-b border-[--color-basic-200];
+	}
+
+	.card-candidate-infos {
+		@apply flex flex-col items-start;
+
+		.card-candidate-title {
+			@apply font-semibold text-xl text-left text-[--color-basic-900];
+		}
+		.card-candidate-resume {
+			@apply font-normal text-sm text-left text-[--color-basic-600];
+		}
+	}
+
+	.card-candidate-condition {
+		@apply flex flex-col gap-4;
+
+		.card-candidate-condition-title {
+			@apply font-medium text-lg text-left text-[--color-basic-900];
+		}
+		.card-candidate-condition-list {
+			@apply flex flex-col gap-3;
+		}
+		.card-candidate-condition-informations {
+			@apply font-normal text-xs text-left text-[--color-basic-900];
+		}
+	}
+
+	.card-candidate-actions {
+		@apply flex flex-col space-y-4;
+
+		.card-candidate-actions-wrapper {
+			@apply flex flex-col;
+
+			.card-candidate-actions-wrapper-content {
+				@apply inline-flex items-center justify-between;
+
+				.card-candidate-actions-wrapper-content-title {
+					@apply font-normal text-sm text-left text-[--color-basic-600];
+				}
+				.card-candidate-actions-wrapper-content-price {
+					@apply font-medium text-base text-left text-[--color-basic-900];
+				}
+			}
+		}
+	}
+}
+
+.condition {
+	@apply flex flex-row items-center gap-2;
+}

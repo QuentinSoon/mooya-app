@@ -19,6 +19,9 @@ const config = {
 	typescript: {
 		reactDocgen: 'react-docgen-typescript',
 	},
+	features: {
+		experimentalRSC: true,
+	},
 	staticDirs: ['../public'],
 	webpackFinal: async (config: any) => {
 		config.resolve.alias = {

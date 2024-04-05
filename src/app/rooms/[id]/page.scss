@@ -1,4 +1,11 @@
 .page {
-	// @apply mx-auto w-[56rem] py-10;
-	@apply grid grid-cols-7 gap-6 mx-auto w-full max-w-[1280px];
+	@apply relative mx-auto flex flex-row gap-6 max-w-6xl py-16;
+
+	.page-wrapper {
+		@apply h-fit grow;
+
+		& > div:not(:last-child) {
+			@apply mb-6 pb-6 border-b border-[--color-basic-200];
+		}
+	}
 }

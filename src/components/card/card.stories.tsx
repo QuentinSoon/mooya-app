@@ -1,13 +1,13 @@
 import { Card } from '@/library/card';
 import type { Meta } from '@storybook/react';
+import { CardCandidate } from './card-candidate';
 import { CardHost } from './card-host';
-import { CardWelcome } from './card-welcome';
 
 export default {
 	title: 'Components/Card',
 	component: Card,
 	parameters: {
-		layout: 'padding',
+		layout: 'centered',
 	},
 	decorators: [
 		(Story) => (
@@ -20,4 +20,4 @@ export default {
 
 export const Host = () => CardHost({});
 
-export const Welcome = () => <div className="w-screen">{CardWelcome({})}</div>;
+export const Candidate = () => <CardCandidate />;
