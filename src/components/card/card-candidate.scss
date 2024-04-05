@@ -1,5 +1,5 @@
 .card-candidate {
-	@apply flex flex-col ring-1 ring-[--color-basic-200] shadow-lg p-6 rounded-3xl min-w-80 max-w-80;
+	@apply sticky top-16 flex flex-col ring-1 ring-[--color-basic-200] shadow-lg p-6 rounded-3xl min-w-80 max-w-80;
 
 	& > div:not(:last-child) {
 		@apply mb-4 pb-4 border-b border-[--color-basic-200];

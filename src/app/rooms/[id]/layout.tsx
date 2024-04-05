@@ -1,4 +1,4 @@
-import { NavbarHome } from '@/components/navbar/navbar-home';
+import { NavbarHosting } from '@/components/navbar/navbar-hosting';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -14,7 +14,7 @@ export default async function HostingLayout({
 }>) {
 	return (
 		<div>
-			<NavbarHome />
+			<NavbarHosting />
 			{children}
 		</div>
 	);

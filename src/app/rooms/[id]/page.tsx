@@ -89,7 +89,13 @@ export default async function Page({ params }: Props) {
 					</div>
 				</div>
 				<SectionRooms title="Ou se situe le logement">
-					<Mapbox className="w-full h-96 rounded-2xl overflow-hidden" />
+					<Mapbox
+						location={{
+							lat: rooms.location[0],
+							lng: rooms.location[1],
+						}}
+						className="w-full h-96 rounded-2xl overflow-hidden"
+					/>
 					<div className="flex flex-col">
 						<div className="font-semibold text-base text-left text-[--color-basic-900]">
 							Nantes, Pays-de-la-Loire, France

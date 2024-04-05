@@ -12,7 +12,12 @@ import {
 } from 'react';
 import './mapbox.scss';
 
-export type MapboxProps = PropsWithChildren<{}>;
+export type MapboxProps = PropsWithChildren<{
+	location?: {
+		lat: number;
+		lng: number;
+	};
+}>;
 
 export type UseMapboxProps = Omit<
 	HTMLAttributes<HTMLDivElement>,
@@ -21,12 +26,12 @@ export type UseMapboxProps = Omit<
 	MapboxProps;
 
 const Mapbox = forwardRef<HTMLDivElement, UseMapboxProps>(
-	({ className }, ref) => {
+	({ className, location }, ref) => {
 		const mapContainer = useRef<any>();
 		const map = useRef<any>();
-		const [lng, setLng] = useState(-0.5593);
-		const [lat, setLat] = useState(47.4698);
-		const [zoom, setZoom] = useState(9);
+		const [lng, setLng] = useState(location?.lng ?? -0.5593);
+		const [lat, setLat] = useState(location?.lat ?? 47.4698);
+		const [zoom, setZoom] = useState(10);
 
 		useEffect(() => {
 			if (map.current) return; // initialize map only once
