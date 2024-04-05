@@ -11,7 +11,7 @@ export const SectionRooms = ({
 	children: ReactNode;
 }) => {
 	return (
-		<Section className="flex flex-col gap-4">
+		<Section className="flex flex-col space-y-4">
 			<div className="font-semibold text-xl text-left text-[--color-basic-900]">
 				{title}
 			</div>

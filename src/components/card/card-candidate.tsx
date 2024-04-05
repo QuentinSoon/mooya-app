@@ -8,9 +8,18 @@ import './card-candidate.scss';
 export const CardCandidate = ({
 	title = 'BlueShoes',
 	description = '1 piece - 1 chambre - 1 salle de bain',
+	owner,
 }: {
 	title?: string;
 	description?: string;
+	owner: {
+		id: string;
+		email: string;
+		user_id: string;
+		firstname: string;
+		create_at: string;
+		avatar_url: string;
+	};
 }) => (
 	<Card className="card-candidate">
 		<div className="card-candidate-infos">
@@ -20,9 +29,9 @@ export const CardCandidate = ({
 		<div>
 			<User
 				avatarProps={{
-					src: 'https://i.scdn.co/image/ab6761610000e5ebd95cf4457fac4cc62311f84f',
+					src: owner.avatar_url,
 				}}
-				name="Proposé par Jennie Kim"
+				name={`Proposé par ${owner.firstname ?? 'Anonyme'}`}
 				description="Membre depuis mars 2024"
 			/>
 		</div>

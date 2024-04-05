@@ -4,7 +4,6 @@ import { createClient } from './client';
 
 export const HandleSignWithGoogle = async () => {
 	const supabase = createClient();
-	console.log('location.origin', location.origin);
 	const { data, error } = await supabase.auth.signInWithOAuth({
 		provider: 'google',
 		options: {
