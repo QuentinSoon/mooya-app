@@ -249,7 +249,31 @@ export default async function Page({ params }: Props) {
 								</div>
 								<div className="flex flex-col space-y-0.5 w-full">
 									<div className="text-sm font-normal text-supergray">DPE</div>
-									<div className="text-base font-semibold text-supergray"></div>
+									<div className="text-base font-semibold text-supergray">
+										<div className="flex flex-row box-border border rounded-lg border-[--color-basic-200] w-fit h-6">
+											<div className="flex items-center justify-center font-medium text-sm bg-green-600 px-1.5 rounded-l-md">
+												A
+											</div>
+											<div className="flex items-center justify-center font-medium text-sm bg-green-400 px-1.5">
+												B
+											</div>
+											<div className="flex items-center justify-center font-medium text-sm bg-lime-400 px-1.5">
+												C
+											</div>
+											<div className="flex items-center justify-center font-medium text-sm bg-yellow-300 px-1.5 z-20 scale-125 ring-2 ring-black rounded-lg">
+												D
+											</div>
+											<div className="flex items-center justify-center font-medium text-sm bg-orange-300 px-1.5">
+												E
+											</div>
+											<div className="flex items-center justify-center font-medium text-sm bg-orange-400 px-1.5">
+												F
+											</div>
+											<div className="flex items-center justify-center font-medium text-sm bg-red-500 px-1.5 rounded-r-md">
+												G
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 							<div className="flex flex-row space-x-4 justify-start items-center">
@@ -272,7 +296,29 @@ export default async function Page({ params }: Props) {
 								</div>
 								<div className="flex flex-col space-y-0.5 w-full">
 									<div className="text-sm font-normal text-supergray">GES</div>
-									<div className="text-base font-semibold text-supergray"></div>
+									<div className="flex flex-row box-border border rounded-lg border-[--color-basic-200] w-fit h-6">
+										<div className="flex items-center justify-center font-medium text-sm bg-[--color-berry-200] px-1.5 rounded-l-md">
+											A
+										</div>
+										<div className="flex items-center justify-center font-medium text-sm bg-[--color-berry-300] px-1.5 z-20 scale-125 ring-2 ring-black rounded-lg">
+											B
+										</div>
+										<div className="flex items-center justify-center font-medium text-sm bg-[--color-berry-400] px-1.5">
+											C
+										</div>
+										<div className="flex items-center justify-center font-medium text-sm bg-[--color-berry-500] px-1.5">
+											D
+										</div>
+										<div className="flex items-center justify-center font-medium text-sm bg-[--color-berry-600] px-1.5">
+											E
+										</div>
+										<div className="flex items-center justify-center font-medium text-sm bg-[--color-berry-700] px-1.5">
+											F
+										</div>
+										<div className="flex items-center justify-center font-medium text-sm bg-[--color-berry-800] px-1.5 rounded-r-md">
+											G
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
