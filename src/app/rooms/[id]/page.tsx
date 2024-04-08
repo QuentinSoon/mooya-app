@@ -248,7 +248,7 @@ export default async function Page({ params }: Props) {
 									</svg>
 								</div>
 								<div className="flex flex-col space-y-0.5 w-full">
-									<div className="text-sm font-normal text-supergray">DPE</div>
+									<div className="text-sm font-normal text-supergray">DPEs</div>
 									<div className="text-base font-semibold text-supergray">
 										<div className="flex flex-row box-border border rounded-lg border-[--color-basic-200] w-fit h-6">
 											<div className="flex items-center justify-center font-medium text-sm bg-green-600 px-1.5 rounded-l-md">
