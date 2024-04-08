@@ -35,17 +35,11 @@ export default async function Page({ params }: Props) {
 	const supabase = createClient();
 	const { data: rooms } = await supabase
 		.from('rooms')
-		.select(`*, privacy(*), structure(*), property(*), owner:users(*)`)
+		.select(
+			`*, privacy(*), structure(*), property(*), owner:users(*), test(*, amenities(*))`
+		)
 		.eq('id', params.id)
 		.single();
-
-	const { data: test } = await supabase
-		.from('test')
-		.select(`*, amenities(*)`)
-		.eq('room_id', params.id);
-
-	console.log(rooms);
-	console.log(test);
 
 	return (
 		<div className="page">
@@ -97,7 +91,7 @@ export default async function Page({ params }: Props) {
 				</div>
 				<SectionRooms title="A propos">
 					<div className="space-y-6">
-						<div className={`grid grid-cols-3 gap-4 w-3/4`}>
+						<div className={`grid grid-cols-3 gap-8 w-3/4`}>
 							<div className="flex flex-row space-x-4 justify-start items-center">
 								<div className="flex flex-col">
 									<Icon name={'BedDouble'} size={24} color="currentColor" />
@@ -233,57 +227,24 @@ export default async function Page({ params }: Props) {
 				</SectionRooms>
 				<SectionRooms title="Ce que propose ce logement">
 					<div className="space-y-6">
-						<div className={`grid grid-cols-3 gap-4 w-3/4`}>
-							{test &&
-								test.map((amenity: any, index: number) => (
-									<div
-										key={index}
-										className="flex flex-row space-x-4 justify-start items-center"
-									>
-										<div className="flex flex-col">
-											<Icon
-												name={amenity.amenities.icon_id ?? 'TriangleAlert'}
-												size={24}
-												color="currentColor"
-											/>
-										</div>
-										<div className="flex flex-col space-y-0.5 w-full text-sm font-medium text-[--color-basic-900] text-left">
-											{amenity.amenities.title ?? 'Error'}
-										</div>
+						<div className={`grid grid-cols-2 gap-8 w-2/4`}>
+							{rooms.test.map((amenity: any, index: number) => (
+								<div
+									key={index}
+									className="flex flex-row space-x-4 justify-start items-center"
+								>
+									<div className="flex flex-col">
+										<Icon
+											name={amenity.amenities.icon_id ?? 'TriangleAlert'}
+											size={24}
+											color="currentColor"
+										/>
 									</div>
-								))}
-							{/* <div className="flex flex-row space-x-4 justify-start items-center">
-								<div className="flex flex-col">
-									<Icon name={'Refrigerator'} size={24} color="currentColor" />
+									<div className="flex flex-col space-y-0.5 w-full text-sm font-medium text-[--color-basic-900] text-left">
+										{amenity.amenities.title ?? 'Error'}
+									</div>
 								</div>
-								<div className="flex flex-col space-y-0.5 w-full text-sm font-medium text-[--color-basic-900] text-left">
-									Cuisine
-								</div>
-							</div>
-							<div className="flex flex-row space-x-4 justify-start items-center">
-								<div className="flex flex-col">
-									<Icon name={'Waves'} size={24} color="currentColor" />
-								</div>
-								<div className="flex flex-col space-y-0.5 w-full text-sm font-medium text-[--color-basic-900] text-left">
-									Piscine
-								</div>
-							</div>
-							<div className="flex flex-row space-x-4 justify-start items-center">
-								<div className="flex flex-col">
-									<Icon name={'Wifi'} size={24} color="currentColor" />
-								</div>
-								<div className="flex flex-col space-y-0.5 w-full text-sm font-medium text-[--color-basic-900] text-left">
-									Wifi
-								</div>
-							</div>
-							<div className="flex flex-row space-x-4 justify-start items-center">
-								<div className="flex flex-col">
-									<Icon name={'Tv'} size={24} color="currentColor" />
-								</div>
-								<div className="flex flex-col space-y-0.5 w-full text-sm font-medium text-[--color-basic-900] text-left">
-									Television
-								</div>
-							</div> */}
+							))}
 						</div>
 					</div>
 				</SectionRooms>
