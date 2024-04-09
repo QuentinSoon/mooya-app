@@ -3,6 +3,7 @@ import { SectionRooms } from '@/components/sections/section-rooms';
 import { Button } from '@/library/button';
 import { Icon } from '@/library/icon';
 import { Mapbox } from '@/library/mapbox';
+import { User } from '@/library/user';
 import { createClient } from '@/utils/supabase/server';
 import { Metadata, ResolvingMetadata } from 'next';
 import './page.scss';
@@ -221,7 +222,10 @@ export default async function Page({ params }: Props) {
 							En savoir plus
 						</button> */}
 					</div>
-					<Button size="md" className="underline -ml-5 w-fit" variant="light">
+					{/* <Button size="md" className="underline -ml-5 w-fit" variant="light">
+						En savoir plus
+					</Button> */}
+					<Button size="md" className="w-fit" variant="outline">
 						En savoir plus
 					</Button>
 				</SectionRooms>
@@ -345,6 +349,40 @@ export default async function Page({ params }: Props) {
 							</div>
 						</div>
 					</div>
+				</SectionRooms>
+				<SectionRooms>
+					<User
+						size="lg"
+						name={`Proposé par Anonyme`}
+						// description={`Membre depuis mars 2024 `}
+						description={
+							<div className="flex flex-row items-center gap-2">
+								<div>Membre depuis mars 2024</div>
+								<span className="font-semibold text-xs text-[--color-basic-900] underline">
+									Particulier
+								</span>
+							</div>
+						}
+					/>
+					<div className="flex flex-col space-y-2">
+						<div className="font-semibold text-base text-left text-[--color-basic-900]">
+							Sur votre propriétaire
+						</div>
+						<ul className="space-y-2">
+							<li className="font-normal text-sm text-left text-[--color-basic-600]">
+								Nombre de logements en location: 4
+							</li>
+							<li className="font-normal text-sm text-left text-[--color-basic-600]">
+								Taux de reponses: 100%
+							</li>
+							<li className="font-normal text-sm text-left text-[--color-basic-600]">
+								Delai de reponses: Moins d'une heure
+							</li>
+						</ul>
+					</div>
+					<Button className="w-fit" variant="outline">
+						Contacter le proprietaire
+					</Button>
 				</SectionRooms>
 			</div>
 			<CardCandidate

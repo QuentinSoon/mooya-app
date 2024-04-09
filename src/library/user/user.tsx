@@ -1,20 +1,16 @@
 'use client';
 
 import { cn } from '@/utils/cn';
-import { HTMLAttributes, forwardRef } from 'react';
+import { HTMLAttributes, ReactNode, forwardRef } from 'react';
 import { Avatar, AvatarProps } from '../avatar';
+import { UserSizeProps } from './types';
 import './user.scss';
 
 export type UserProps = {
 	avatarProps?: AvatarProps;
 	name?: string;
-	description?: string;
-	className?: {
-		avatar?: string;
-		userWrapper?: string;
-		name?: string;
-		description?: string;
-	};
+	description?: string | ReactNode;
+	size?: UserSizeProps;
 };
 
 export type UseUserProps = Omit<
@@ -24,10 +20,10 @@ export type UseUserProps = Omit<
 	UserProps;
 
 const User = forwardRef<HTMLDivElement, UseUserProps>(
-	({ avatarProps, name, description }, ref) => {
+	({ avatarProps, name, description, size = 'md' }, ref) => {
 		return (
-			<div className={cn('user')}>
-				<Avatar {...avatarProps} />
+			<div className={cn('user', `user-size-${size}`)}>
+				<Avatar size={avatarProps?.size ?? size} {...avatarProps} />
 				<div className={cn('user-wrapper')}>
 					<div className={cn('name')}>{name}</div>
 					<div className={cn('description')}>{description}</div>

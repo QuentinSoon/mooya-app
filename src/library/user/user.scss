@@ -2,7 +2,7 @@
 	@apply flex flex-row items-center justify-start gap-2 box-border outline-none border-none;
 
 	.user-wrapper {
-		@apply inline-flex flex-col justify-between;
+		@apply flex flex-col justify-between;
 
 		.name {
 			// @apply font-normal text-sm text-[--color-basic-900];
@@ -11,6 +11,41 @@
 
 		.description {
 			@apply font-normal text-xs text-[--color-basic-600];
+		}
+	}
+
+	/**
+	 * User size
+	 */
+	&.user-size-sm {
+		.user-wrapper {
+			.name {
+				@apply text-xs;
+			}
+			.description {
+				@apply text-[10px];
+			}
+		}
+	}
+	&.user-size-md {
+		.user-wrapper {
+			.name {
+				@apply text-sm;
+			}
+			.description {
+				@apply text-xs;
+			}
+		}
+	}
+	&.user-size-lg {
+		@apply gap-3;
+		.user-wrapper {
+			.name {
+				@apply text-base;
+			}
+			.description {
+				@apply text-sm;
+			}
 		}
 	}
 }
