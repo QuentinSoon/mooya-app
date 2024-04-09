@@ -240,13 +240,16 @@ export default async function Page({ params }: Props) {
 											color="currentColor"
 										/>
 									</div>
-									<div className="flex flex-col space-y-0.5 w-full text-sm font-medium text-[--color-basic-900] text-left">
+									<div className="flex flex-col space-y-0.5 w-full text-base font-medium text-[--color-basic-900] text-left">
 										{amenity.amenities.title ?? 'Error'}
 									</div>
 								</div>
 							))}
 						</div>
 					</div>
+					<Button size="md" className="w-fit" variant="outline">
+						Voir les {rooms.test.length} équipements
+					</Button>
 				</SectionRooms>
 				<SectionRooms title="Ou se situe le logement">
 					<Mapbox
@@ -262,6 +265,84 @@ export default async function Page({ params }: Props) {
 						</div>
 						<div className="font-normal text-sm text-left text-[--color-basic-600]">
 							Facile d accès, proche des transports en commun
+						</div>
+					</div>
+				</SectionRooms>
+				<SectionRooms title="Qui est le propriétaire">
+					<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3 3xl:grid-cols-3 4xl:grid-cols-3 gap-5">
+						<div className="flex flex-col">
+							<div className="font-medium text-lg text-supergray pb-2">
+								Règlement intérieur
+							</div>
+							<div className="flex flex-col space-y-1.5 text-supergray">
+								<div className="flex flex-row space-x-3 items-center">
+									<div className="self-start pt-1">
+										<Icon name={'Clock'} size={18} />
+									</div>
+									<div>Pas d'animaux</div>
+								</div>
+								<div className="flex flex-row space-x-3 items-center">
+									<div className="self-start pt-1">
+										<Icon name={'Clock'} size={18} />
+									</div>
+									<div>Non fumeur</div>
+								</div>
+								<div className="flex flex-row space-x-3 items-center">
+									<div className="self-start pt-1">
+										<Icon name={'Clock'} size={18} />
+									</div>
+									<div>Pas de fête ni de soirée</div>
+								</div>
+							</div>
+						</div>
+
+						<div className="flex flex-col">
+							<div className="font-medium text-lg text-supergray pb-2">
+								Santé et sécurité
+							</div>
+							<div className="flex flex-col space-y-1.5 text-supergray">
+								<div className="flex flex-row space-x-3 items-center">
+									<div className="self-start pt-1">
+										<Icon name={'Clock'} size={18} />
+									</div>
+									<div>Détecteur de fumée</div>
+								</div>
+								<div className="flex flex-row space-x-3 items-center">
+									<div className="self-start pt-1">
+										<Icon name={'Clock'} size={18} />
+									</div>
+									<div>Aucun détecteur de monoxyde de carbone</div>
+								</div>
+							</div>
+						</div>
+
+						<div className="flex flex-col">
+							<div className="font-medium text-lg text-supergray pb-2">
+								Conditions du bien
+							</div>
+							<div className="flex flex-col space-y-1.5 text-supergray">
+								<div className="flex flex-row space-x-3 items-center">
+									<div className="self-start pt-1">
+										<Icon name={'Clock'} size={18} />
+									</div>
+									<div>
+										Les consignes de Mooya en matière de distanciation physique
+										et d'autres consignes liées au Covid-19 s'appliquent.
+									</div>
+								</div>
+								<div className="flex flex-row space-x-3 items-center">
+									<div className="self-start pt-1">
+										<Icon name={'Clock'} size={18} />
+									</div>
+									<div>Détecteur de fumée</div>
+								</div>
+								<div className="flex flex-row space-x-3 items-center">
+									<div className="self-start pt-1">
+										<Icon name={'Clock'} size={18} />
+									</div>
+									<div>Aucun détecteur de monoxyde de carbone</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</SectionRooms>
