@@ -359,7 +359,7 @@ export default async function Page({ params }: Props) {
 							<div className="flex flex-row items-center gap-2">
 								<div>Membre depuis mars 2024</div>
 								<span className="font-semibold text-xs text-[--color-basic-900] underline">
-									Particulier
+									Particulier=
 								</span>
 							</div>
 						}
