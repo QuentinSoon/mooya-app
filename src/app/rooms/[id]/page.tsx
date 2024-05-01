@@ -26,6 +26,8 @@ export async function generateMetadata(
 		.eq('id', id)
 		.single();
 
+	console.log(rooms);
+
 	return {
 		title: rooms.title + ' - Mooya' ?? 'Room',
 		description: 'test',
@@ -258,8 +260,8 @@ export default async function Page({ params }: Props) {
 				<SectionRooms title="Ou se situe le logement">
 					<Mapbox
 						location={{
-							lat: rooms.location[0],
-							lng: rooms.location[1],
+							lat: rooms.location ? rooms.location[0] : 0,
+							lng: rooms.location ? rooms.location[1] : 0,
 						}}
 						className="w-full h-96 rounded-2xl overflow-hidden"
 					/>
@@ -353,7 +355,10 @@ export default async function Page({ params }: Props) {
 				<SectionRooms>
 					<User
 						size="lg"
-						name={`Proposé par Anonyme`}
+						name={`Proposé par ${rooms.owner.firstname}`}
+						avatarProps={{
+							src: rooms.owner.avatar_url,
+						}}
 						// description={`Membre depuis mars 2024 `}
 						description={
 							<div className="flex flex-row items-center gap-2">

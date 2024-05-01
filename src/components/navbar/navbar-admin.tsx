@@ -20,7 +20,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import LOGO from '../../../public/logo.png';
 
-export const NavbarHosting = () => {
+export const NavbarAdmin = () => {
 	const router = useRouter();
 
 	return (
@@ -29,7 +29,7 @@ export const NavbarHosting = () => {
 				<div className="inline-flex items-center gap-4">
 					<Image src={LOGO} height={32} alt="logo" />
 					<h1 className="font-semibold text-[--color-berry-800] text-base">
-						Espace Locataire
+						Administration
 					</h1>
 				</div>
 			</NavbarLeft>
