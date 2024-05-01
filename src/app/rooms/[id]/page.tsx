@@ -283,7 +283,7 @@ export default async function Page({ params }: Props) {
 									<div className="self-start pt-1">
 										<Icon name={'Clock'} size={18} />
 									</div>
-									<div>Pas d'animaux</div>
+									<div>Pas d animaux</div>
 								</div>
 								<div className="flex flex-row space-x-3 items-center">
 									<div className="self-start pt-1">
@@ -331,7 +331,7 @@ export default async function Page({ params }: Props) {
 									</div>
 									<div>
 										Les consignes de Mooya en matière de distanciation physique
-										et d'autres consignes liées au Covid-19 s'appliquent.
+										et d autres consignes liées au Covid-19 s appliquent.
 									</div>
 								</div>
 								<div className="flex flex-row space-x-3 items-center">
@@ -376,7 +376,7 @@ export default async function Page({ params }: Props) {
 								Taux de reponses: 100%
 							</li>
 							<li className="font-normal text-sm text-left text-[--color-basic-600]">
-								Delai de reponses: Moins d'une heure
+								Delai de reponses: Moins d une heure
 							</li>
 						</ul>
 					</div>
