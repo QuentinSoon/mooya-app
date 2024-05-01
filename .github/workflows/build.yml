@@ -11,7 +11,7 @@ env:
   TAGS: ghcr.io/quentinsoon/mooya-app
 
 jobs:
-  build-and-test:
+  build-and-test-and-deploy:
     runs-on: ubuntu-latest
 
     steps:

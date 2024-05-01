@@ -20,4 +20,15 @@ export default {
 
 export const Host = () => CardHost({});
 
-export const Candidate = () => <CardCandidate />;
+export const Candidate = () => (
+	<CardCandidate
+		owner={{
+			id: '',
+			email: '',
+			user_id: '',
+			firstname: '',
+			create_at: '',
+			avatar_url: '',
+		}}
+	/>
+);
