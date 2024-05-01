@@ -14,9 +14,9 @@ import {
 	NavbarLeft,
 	NavbarRight,
 } from '@/library/navbar';
+import MESSAGES from '@/utils/messages.json';
 import { HandleLogout } from '@/utils/supabase/supabase';
 import Image from 'next/image';
-import MESSAGES from '../../../messages.json';
 import LOGO from '../../../public/logo.png';
 
 export const NavbarHosting = () => {
