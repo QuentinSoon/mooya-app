@@ -28,8 +28,8 @@ export const NavbarAdmin = () => {
 			<NavbarLeft>
 				<div className="inline-flex items-center gap-4">
 					<Image src={LOGO} height={32} alt="logo" />
-					<h1 className="font-semibold text-[--color-berry-800] text-base">
-						Administration
+					<h1 className="font-semibold text-[--color-basic-800] text-base">
+						Espace Administration
 					</h1>
 				</div>
 			</NavbarLeft>
@@ -42,7 +42,7 @@ export const NavbarAdmin = () => {
 					{MESSAGES.TODAY}
 				</Button>
 				<Button variant="light" rounded="full">
-					{MESSAGES.MESSAGES}
+					{MESSAGES.USERS}
 				</Button>
 				<Button variant="light" rounded="full">
 					{MESSAGES.INFORMATIONS}
@@ -93,6 +93,9 @@ export const NavbarAdmin = () => {
 			</NavbarCenter>
 			<NavbarRight>
 				<div className="inline-flex items-center">
+					<Button variant="light" rounded="full" className="text-red-400">
+						Sortir du mode administration
+					</Button>
 					<Dropdown placement="bottom-right">
 						<DropdownTrigger>
 							<Button variant="outline" rounded="full">
