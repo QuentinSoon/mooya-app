@@ -36,11 +36,14 @@ export async function generateMetadata(
 
 export default async function Page({ params }: Props) {
 	const supabase = createClient();
-	const { data: rooms } = await supabase
+	const { data: rooms, error } = await supabase
 		.from('rooms')
 		.select(`*, privacy(*), structure(*), property(*), owner:users(*)`)
 		.eq('id', params.id)
 		.single();
+	console.log('ok', error);
+
+	console.log('off', rooms);
 
 	return (
 		<div className="page">
@@ -253,7 +256,7 @@ export default async function Page({ params }: Props) {
 						</div>
 					</div>
 					<Button size="md" className="w-fit" variant="outline">
-						Voir les {rooms.test.length} équipements
+						Voir les {rooms.test?.length ?? 0} équipements
 					</Button>
 				</SectionRooms>
 				<SectionRooms title="Ou se situe le logement">
