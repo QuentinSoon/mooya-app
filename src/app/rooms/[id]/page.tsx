@@ -68,7 +68,7 @@ export default async function Page({ params }: Props) {
 					</div>
 					<div>
 						<h1 className="font-semibold text-xl text-left text-[--color-basic-900]">
-							{rooms?.title}
+							{rooms.title}
 						</h1>
 						<div className="font-normal text-sm text-left text-[--color-basic-600]">
 							{rooms.structure.title} - {rooms.privacy.title} -{' '}
