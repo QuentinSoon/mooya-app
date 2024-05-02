@@ -38,9 +38,7 @@ export default async function Page({ params }: Props) {
 	const supabase = createClient();
 	const { data: rooms } = await supabase
 		.from('rooms')
-		.select(
-			`*, privacy(*), structure(*), property(*), owner:users(*), test(*, amenities(*))`
-		)
+		.select(`*, privacy(*), structure(*), property(*), owner:users(*)`)
 		.eq('id', params.id)
 		.single();
 
