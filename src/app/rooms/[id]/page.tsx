@@ -232,7 +232,7 @@ export default async function Page({ params }: Props) {
 				<SectionRooms title="Ce que propose ce logement">
 					<div className="space-y-6">
 						<div className={`grid grid-cols-2 gap-8 w-2/4`}>
-							{rooms.test &&
+							{rooms?.test &&
 								rooms.test.map((amenity: any, index: number) => (
 									<div
 										key={index}
