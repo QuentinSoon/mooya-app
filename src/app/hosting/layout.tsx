@@ -20,7 +20,7 @@ export default async function HostingLayout({
 		redirect('/');
 	}
 	return (
-		<div>
+		<div className="flex flex-col h-full w-full">
 			<NavbarHosting />
 			{children}
 		</div>

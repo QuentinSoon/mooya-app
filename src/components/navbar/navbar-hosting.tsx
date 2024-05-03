@@ -81,7 +81,10 @@ export const NavbarHosting = () => {
 						<DropdownItem className="font-medium">
 							{MESSAGES.BOOKINGS}
 						</DropdownItem>
-						<DropdownItem className="font-medium">
+						<DropdownItem
+							className="font-medium"
+							onClick={() => router.push('/hosting/folders', { scroll: false })}
+						>
 							{MESSAGES.MY_FOLDER_HOSTING}
 						</DropdownItem>
 						<DropdownSeparator />
