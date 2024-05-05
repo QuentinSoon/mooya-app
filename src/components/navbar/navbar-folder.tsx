@@ -10,7 +10,8 @@ export const NavbarFolder = () => {
 				<Button
 					startContent="Situation"
 					variant="light"
-					color="paradiso"
+					color="basic"
+					rounded="full"
 					fullWidth
 					contentFullWidth
 				/>

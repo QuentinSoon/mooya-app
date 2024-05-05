@@ -1,4 +1,3 @@
-import { NavbarFolder } from '@/components/navbar/navbar-folder';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -12,12 +11,5 @@ export default async function HostingLayout({
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
-	return (
-		<section className="flex flex-row grow">
-			<div>
-				<NavbarFolder />
-			</div>
-			{children}
-		</section>
-	);
+	return <section className="flex flex-row grow">{children}</section>;
 }
