@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { StructureSchema } from './Structure.class';
 import { UserSchema } from './User.class';
 
 export const RoomsSchema = z.object({
@@ -16,13 +17,8 @@ export const RoomsSchema = z.object({
 			created_at: z.string(),
 		})
 		.nullable(),
-	structure: z
-		.object({
-			id: z.string().uuid(),
-			title: z.string(),
-			created_at: z.string(),
-		})
-		.nullable(),
+
+	structure: z.array(StructureSchema).nullable(),
 	property: z
 		.object({
 			id: z.string().uuid(),
